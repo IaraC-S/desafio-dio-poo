@@ -1,3 +1,4 @@
+import br.com.dio.desafio.dominio.Conteudo;
 import br.com.dio.desafio.dominio.Curso;
 import br.com.dio.desafio.dominio.Mentoria;
 
@@ -27,9 +28,15 @@ public class Main {
         mentoria.setDescricao("descrição mentoria java");
         mentoria.setData(LocalDate.now());
 
+    // Polimorfismo: tudo que tem em Conteudo tem em Curso, mas tudo nem tudo que tem Curso tem em Conteudo
+        Conteudo conteudo = new Curso();
 
         System.out.println(curso1);
         System.out.println(curso2);
         System.out.println(mentoria);
+
+
+
+
     }
 }
