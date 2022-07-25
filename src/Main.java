@@ -1,6 +1,4 @@
-import br.com.dio.desafio.dominio.Conteudo;
-import br.com.dio.desafio.dominio.Curso;
-import br.com.dio.desafio.dominio.Mentoria;
+import br.com.dio.desafio.dominio.*;
 
 import java.time.LocalDate;
 
@@ -31,11 +29,47 @@ public class Main {
     // Polimorfismo: tudo que tem em Conteudo tem em Curso, mas tudo nem tudo que tem Curso tem em Conteudo
         Conteudo conteudo = new Curso();
 
-        System.out.println(curso1);
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Decrição Java Developer");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+
+        Dev devIara = new Dev();
+        devIara.setNome("Iara");
+        devIara.inscreverBootcamp(bootcamp);
+        System.out.println(" Conteudos Inscritos Iara" + devIara.getConteudosInscritos());
+        devIara.progredir();//concluir o conteudo
+        devIara.progredir();//concluir o conteudo
+
+        System.out.println("-");
+        System.out.println(" Conteudos Inscritos Iara" + devIara.getConteudosInscritos());
+        System.out.println(" Conteudos Concluidos Iara" +devIara.getConteudosConcluidos());
+        System.out.println("XP:" + devIara.calcularTotalxp());
+
+        System.out.println("-------------");
+
+
+        Dev devMaria = new Dev();
+        devMaria.setNome("Maria");
+        devMaria.inscreverBootcamp(bootcamp);
+        System.out.println(" Conteudos Inscritos Maria" +devMaria.getConteudosInscritos());
+        devMaria.progredir();
+        devMaria.progredir();
+        devMaria.progredir();
+        System.out.println("-");
+        System.out.println(" Conteudos Inscritos Maria" +devMaria.getConteudosInscritos());
+        System.out.println(" Conteudos Concluidos Maria" +devMaria.getConteudosConcluidos());
+        System.out.println("XP:" + devMaria.calcularTotalxp());
+        /*System.out.println(curso1);
         System.out.println(curso2);
         System.out.println(mentoria);
 
+        *\
 
+         */
 
 
     }
